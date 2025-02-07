@@ -1,5 +1,7 @@
 <?php session_start(); 
 include "config/connect.php";
+error_reporting(0);
+
 $id=$_GET['cat_id'];
 
 $sql="select * from category where cat_id='$id'";
@@ -16,7 +18,7 @@ $row=mysqli_fetch_array($res);
 </head>
 
 <body>
-<div><?php error_reporting(0); echo $_SESSION['company']; unset($_SESSION['company']);?></div>
+<div><?php  echo $_SESSION['company']; unset($_SESSION['company']);?></div>
 <form id="form1" name="form1" method="post" action="company _exe.php">
   <table width="662" border="1">
     <tr>
@@ -82,22 +84,22 @@ $row=mysqli_fetch_array($res);
     <tr>
       <td>Approval </td>
       <td><label for="textfield14">
-        <input type="radio" name="approval" id="radio" value="yes" />
+        <input type="radio" name="approval" id="radio" value="Y" />
       </label>
         yes 
         <label for="textfield19">
-          <input type="radio" name="approval" id="radio2" value="no" />
+          <input type="radio" name="approval" id="radio2" value="N" />
         </label>
         no</td>
     </tr>
     <tr>
       <td>Status</td>
       <td><label for="textfield20">
-        <input type="radio" name="status" id="radio3" value="yes" />
+        <input type="radio" name="status" id="radio3" value="Y" />
       </label>
 yes
 <label for="textfield21">
-  <input type="radio" name="status" id="radio4" value="no" />
+  <input type="radio" name="status" id="radio4" value="N" />
 </label>
 no<label for="textfield15"></label></td>
     </tr>
